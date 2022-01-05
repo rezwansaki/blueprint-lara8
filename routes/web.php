@@ -10,6 +10,7 @@ Route::get('/', function () {
 Route::get('/getdata', function () {
     $blogs = Blog::all();
     return $blogs;
+    //this is final 
 });
 
 
