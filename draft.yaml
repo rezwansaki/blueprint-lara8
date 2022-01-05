@@ -1,0 +1,34 @@
+models:
+  Post:
+    title: string:400
+    content: longtext
+    published_at: nullable timestamp
+    author_id: id:user
+
+controllers:
+  Post:
+    index:
+      query: all
+      render: post.index with:posts
+
+    create:
+      render: post.create
+
+    store:
+      save: post
+      flash: post.title
+      redirect: post.index
+
+    show:
+      render: post.show with:post
+
+    edit:
+      render: post.edit with:post
+
+    update:
+      save: post
+      flash: post.title
+      redirect: post.index
+
+    destroy:
+      redirect: post.index
