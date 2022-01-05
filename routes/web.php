@@ -13,8 +13,8 @@ Route::get('/phpinfo', function () {
 
 
 Route::get('/getdata', function () {
-    $blogs = Blog::all();
-    return $blogs;
+    //$blogs = Blog::all();
+    return '$blogs';
     //this is final 
 });
 
