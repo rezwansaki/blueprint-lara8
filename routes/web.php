@@ -1,6 +1,7 @@
 <?php
 
-use App\Models\Blog;
+//use App\Models\Blog;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -14,7 +15,8 @@ Route::get('/phpinfo', function () {
 
 Route::get('/getdata', function () {
     //$blogs = Blog::all();
-    return '$blogs';
+    $blogs = DB::table('users')->get();
+    return $blogs;
     //this is final 
 });
 
