@@ -1,8 +1,7 @@
 <?php
 
-//use App\Models\Blog;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -13,12 +12,7 @@ Route::get('/phpinfo', function () {
 });
 
 
-Route::get('/getdata', function () {
-    //$blogs = Blog::all();
-    $blogs = DB::table('users')->get();
-    return $blogs;
-    //this is final 
-});
+Route::get('/getdata', [BlogController::class, 'index']);
 
 
 
