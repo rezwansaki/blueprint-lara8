@@ -12,7 +12,7 @@ Route::get('/phpinfo', function () {
 });
 
 
-Route::get('/getdata', [BlogController::class, 'index']); //test
+Route::get('/getdata', [BlogController::class, 'index']);
 
 
 
