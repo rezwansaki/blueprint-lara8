@@ -17,3 +17,7 @@ Route::get('/getdata', [BlogController::class, 'index']);
 
 
 Route::resource('post', App\Http\Controllers\PostController::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
